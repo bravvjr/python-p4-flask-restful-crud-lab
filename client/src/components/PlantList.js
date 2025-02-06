@@ -1,10 +1,10 @@
 import PlantCard from "./PlantCard";
 
-function PlantList({ plants, handleUpdatePlant, handleDeletePlant }) {
+function PlantList({ plants }) {
   return (
     <ul className="cards">
       {plants.map((plant) => {
-        return <PlantCard key={plant.id} plant={plant} handleUpdatePlant={handleUpdatePlant} handleDeletePlant={handleDeletePlant} />;
+        return <PlantCard key={plant.id} plant={plant} />;
       })}
     </ul>
   );

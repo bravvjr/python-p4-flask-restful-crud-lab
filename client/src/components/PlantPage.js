@@ -16,21 +16,8 @@ function PlantPage() {
       });
   }, []);
 
-  const handleAddPlant = (newPlant) => {
+  function handleAddPlant(newPlant) {
     const updatedPlantsArray = [...plants, newPlant];
-    setPlants(updatedPlantsArray);
-  }
-
-  const handleUpdatePlant = (updatedPlant) => {
-    const updatedPlantsArray = plants.map(plant => {
-      if (plant.id === updatedPlant.id) return updatedPlant
-      else return plant;  
-    });
-    setPlants(updatedPlantsArray);
-  }
-
-  const handleDeletePlant = (id) => {
-    const updatedPlantsArray = plants.filter((plant) => plant.id !== id);
     setPlants(updatedPlantsArray);
   }
 
@@ -42,7 +29,7 @@ function PlantPage() {
     <main>
       <NewPlantForm onAddPlant={handleAddPlant} />
       <Search searchTerm={searchTerm} onSearchChange={setSearchTerm} />
-      <PlantList plants={displayedPlants} handleUpdatePlant={handleUpdatePlant} handleDeletePlant={handleDeletePlant}/>
+      <PlantList plants={displayedPlants} />
     </main>
   );
 }
